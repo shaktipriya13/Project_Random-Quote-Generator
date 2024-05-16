@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Quote Generator</title>
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%; /* Ensure the body and html elements take the full height */
+        }
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-size: cover; /* Ensures the image covers the whole page */
+            background-position: center; /* Centers the image */
+            background-repeat: no-repeat; /* Prevents the image from repeating */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding-bottom: 60px; /* Prevents content overlap with the bottom bar */
+        }
+        .quote-container {
+            margin-top: 20px;
+            padding: 20px;
+            border: 5px solid rgb(120, 116, 116);
+            border-radius: 50px;
+            background-color: #080808;
+            display: inline-block;
+            max-width: 600px;
+        }
+        .quote {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 20px;
+            color: #fcfafa;
+        }
+        .author {
+            font-family: cursive;
+            margin-top: 10px;
+            font-size: 16px;
+            color: #aba8a8;
+        }
+        .button-container {
+            margin-top: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #0ec959;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #049323;
+        }
+        .bottom-bar {
+            position: fixed; /* Fixes the bar at the bottom */
+            bottom: 0; /* Positions the bar at the very bottom */
+            left: 0; /* Ensures the bar starts from the very left */
+            right: 0; /* Ensures the bar ends at the very right */
+            width: 100%; /* Ensures the bar spans the full width of the page */
+            background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent black background */
+            color: white; /* White text color */
+            text-align: center; /* Center-aligns the text */
+            padding: 10px 0; /* Adds padding to the top and bottom of the bar */
+        }
+        .bottom-bar .heart {
+            color: rgb(255, 60, 6); /* Red color for the heart */
+            font-size: 1.2em; /* Slightly larger font size for the heart */
+        }
+        /* Glowing Tubelight Text Animation */
+        @keyframes flicker {
+            0% { opacity: 1; }
+            5% { opacity: 0.5; }
+            10% { opacity: 1; }
+            15% { opacity: 0.5; }
+            20% { opacity: 1; }
+            25% { opacity: 0.3; }
+            30% { opacity: 0.6; }
+            35% { opacity: 0.4; }
+            40% { opacity: 0.8; }
+            45% { opacity: 0.7; }
+            50% { opacity: 0.9; }
+            55% { opacity: 0.3; }
+            60% { opacity: 0.5; }
+            65% { opacity: 0.7; }
+            70% { opacity: 0.9; }
+            75% { opacity: 0.6; }
+            80% { opacity: 0.8; }
+            85% { opacity: 0.9; }
+            90% { opacity: 0.4; }
+            95% { opacity: 0.7; }
+            100% { opacity: 1; }
+        }
+        .glow {
+            font-size: 2.5em;
+            color: #0f0;
+            text-shadow: 
+                0 0 5px #0f0,
+                0 0 10px #0f0,
+                0 0 20px #0f0,
+                0 0 40px #0f0,
+                0 0 80px #0f0,
+                0 0 90px #0f0,
+                0 0 100px #0f0,
+                0 0 150px #0f0;
+            /* animation: flicker 1.5s infinite alternate; */
+            color: darkblue; /* Text color */
+            text-shadow: 
+                0 0 5px rgb(236, 236, 241),
+                0 0 10px rgb(237, 237, 240),
+                0 0 20px white,
+                0 0 40px white,
+                0 0 80px white,
+                0 0 90px white,
+                0 0 100px white,
+                0 0 150px white;
+        }
+    </style>
+</head>
+<body>
+
+    <h1 class="glow">Random Quote Generator</h1>
+    <div class="quote-container">
+        <div id="quote" class="quote"></div>
+        <div id="author" class="author"></div>
+    </div>
+    <div class="button-container">
+        <button onclick="generateQuote()">Generate New Quote</button>
+    </div>
+    <div class="bottom-bar">
+        Made with <span class="heart">&hearts;</span>
+    </div>
+    <script src="v40.js"></script>
+</body>
+</html>
