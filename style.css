@@ -1,0 +1,13 @@
+.circular-box {
+    width: 1000px;              /* Set the width */
+    height: 400px;             /* Set the height (same as width for circle) */
+    border-radius: 30%;        /* Make it circular */
+    border: 2px solid black;   /* Add a border around the circle */
+    display: flex;             /* To align content */
+    justify-content: center;   /* Center horizontally */
+    align-items: center;       /* Center vertically */
+    text-align: center;        /* Center the text inside */
+    overflow: hidden;          /* Ensure text doesn't spill out */
+    padding: 10px;             /* Add padding inside */
+  }
+  
